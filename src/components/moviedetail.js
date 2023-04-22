@@ -10,7 +10,7 @@ class MovieDetail extends Component {
     componentDidMount() {
         const {dispatch} = this.props;
         if (this.props.selectedMovie == null) {
-            dispatch(fetchMovie(this.props.movieId));
+            dispatch(fetchMovie(this.props.movie_id));
         }
     }
 
@@ -31,7 +31,7 @@ class MovieDetail extends Component {
                         <ListGroupItem>
                             {this.props.selectedMovie.actors.map((actor, i) =>
                                 <p key={i}>
-                                    <b>{actor.actorName}</b> {actor.characterName}
+                                    <b>{actor.actorname}</b> {actor.characterName}
                                 </p>)}
                         </ListGroupItem>
                         <ListGroupItem><h4><BsStarFill/> {this.props.selectedMovie.avgRating}</h4></ListGroupItem>
