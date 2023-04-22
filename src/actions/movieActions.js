@@ -24,18 +24,23 @@ function movieSet(movie) {
 }
 
 
+
 export function setMovie(movie) {
     return dispatch => {
         dispatch(movieSet(movie));
     }
 }
 
-
+export function setMovie(movies) {
+    return dispatch => {
+        dispatch(movieSet(movies));
+    }
+}
 
 
 export function fetchMovie(movie_id) {
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies/${movie._id}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies/${movie_id}?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
