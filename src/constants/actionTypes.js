@@ -4,6 +4,7 @@ const Constants = {
     FETCH_MOVIES: 'FETCH_MOVIES',
     FETCH_MOVIE: 'FETCH_MOVIE',
     SET_MOVIE: 'SET_MOVIE'
+    //SET_MOVIES : 'SET_MOVIES'
 }
 
 export default Constants;
