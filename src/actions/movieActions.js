@@ -31,11 +31,7 @@ export function setMovie(movie) {
     }
 }
 
-export function setMovie(movies) {
-    return dispatch => {
-        dispatch(movieSet(movies));
-    }
-}
+
 
 
 export function fetchMovie(movie_id) {
