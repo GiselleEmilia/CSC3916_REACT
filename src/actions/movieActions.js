@@ -23,11 +23,25 @@ function movieSet(movie) {
     }
 }
 
+function movieSet(movies) {
+    return {
+        type: actionTypes.SET_MOVIE,
+        selectedMovie: movies
+    }
+}
+
 export function setMovie(movie) {
     return dispatch => {
         dispatch(movieSet(movie));
     }
 }
+
+export function setMovie(movies) {
+    return dispatch => {
+        dispatch(movieSet(movies));
+    }
+}
+
 
 export function fetchMovie(movie_id) {
     return dispatch => {
@@ -50,9 +64,9 @@ export function fetchMovie(movie_id) {
     }
 }
 
-export function fetchMovies() {
+export function fetchMovies(movie_id) {
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies/${movie_id}?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',

@@ -17,6 +17,7 @@ function App() {
             <MovieHeader />
             <Route exact path="/" render={()=><MovieList />}/>
             <Route exact path="/movielist" render={()=><MovieList />}/>
+            <Route exact path="/movie/:_id" render={()=><Movie />}/>
             <Route exact path="/movie/:movie_id" render={()=><Movie />}/>
             <Route exact path="/movie/:movie_title" render={()=><Movie />}/>
             <Route path="/signin" render={()=><Authentication />}/>
