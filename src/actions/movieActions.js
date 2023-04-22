@@ -23,12 +23,6 @@ function movieSet(movie) {
     }
 }
 
-function movieSet(movies) {
-    return {
-        type: actionTypes.SET_MOVIE,
-        selectedMovie: movies
-    }
-}
 
 export function setMovie(movie) {
     return dispatch => {
@@ -36,11 +30,7 @@ export function setMovie(movie) {
     }
 }
 
-export function setMovie(movies) {
-    return dispatch => {
-        dispatch(movieSet(movies));
-    }
-}
+
 
 
 export function fetchMovie(movie_id) {
