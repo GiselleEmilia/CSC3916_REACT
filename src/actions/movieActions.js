@@ -36,7 +36,7 @@ export function setMovie(movie) {
 
 export function fetchMovie(movie_id) {
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies/${movie_id}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -50,14 +50,14 @@ export function fetchMovie(movie_id) {
             }
             return response.json()
         }).then((res) => {
-            dispatch(movieFetched(res));
+            dispatch(movieFetched(res.moviesArray));
         }).catch((e) => console.log(e));
     }
 }
 
 export function fetchMovies(movie_id) {
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies/${movie_id}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies/movies?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -71,7 +71,7 @@ export function fetchMovies(movie_id) {
             }
             return response.json()
         }).then((res) => {
-            dispatch(moviesFetched(res));
+            dispatch(moviesFetched(res.moviesArray));
         }).catch((e) => console.log(e));
     }
 }
