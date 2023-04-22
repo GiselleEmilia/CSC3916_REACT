@@ -7,12 +7,61 @@ import { Image } from 'react-bootstrap';
 
 class MovieDetail extends Component {
 
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          username: '',
+          rating: '',
+          review: ''
+        };
+    
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+
     componentDidMount() {
         const {dispatch} = this.props;
         if (this.props.selectedMovie == null) {
             dispatch(fetchMovie(this.props.movie_id));
         }
     }
+
+    
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    const { movieId } = this.props;
+    const { username, rating, review } = this.state;
+
+    this.props.addMovieReview(movieId, username, rating, review);
+
+    this.setState({
+      username: '',
+      rating: '',
+      review: ''
+    });
+  }
+
+
+
+
+
+
+
+
+
+
 
     render() {
         const DetailInfo = () => {
