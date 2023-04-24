@@ -10,7 +10,7 @@ function Movie(props) {
     const [selectedMovie] = useState(props.selectedMovie);
     const params = useParams();
     const movieId = params.movie_id;
-    console.log(movieId);
+    console.log('movie',params.movie_id);
     const dispatch = useDispatch();
     if (selectedMovie == null) {
         dispatch(fetchMovie(movieId));
