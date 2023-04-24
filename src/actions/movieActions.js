@@ -50,7 +50,7 @@ export function fetchMovie() {
             }
             return response.json()
         }).then((res) => {
-            dispatch(movieFetched(res.movieArray));
+            dispatch(movieFetched(res.moviesArray));
         }).catch((e) => console.log(e));
     }
 }
@@ -71,7 +71,7 @@ export function fetchMovies() {
             }
             return response.json()
         }).then((res) => {
-            dispatch(moviesFetched(res.movieArray));
+            dispatch(moviesFetched(res.moviesArray));
         }).catch((e) => console.log(e));
     }
 }
