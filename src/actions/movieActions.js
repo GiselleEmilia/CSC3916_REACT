@@ -23,6 +23,13 @@ function movieSet(movie) {
     }
 }
 
+function moviesSet(movies) {
+    return {
+        type: actionTypes.SET_MOVIES,
+        selectedMovies: movies
+    }
+}
+
 
 
 export function setMovie(movie) {
@@ -31,6 +38,11 @@ export function setMovie(movie) {
     }
 }
 
+export function setMovies(movies) {
+    return dispatch => {
+        dispatch(moviesSet(movies));
+    }
+}
 
 
 
@@ -50,7 +62,7 @@ export function fetchMovie() {
             }
             return response.json()
         }).then((res) => {
-            dispatch(movieFetched(res.movieArray));
+            dispatch(movieFetched(res.moviesArray));
         }).catch((e) => console.log(e));
     }
 }
@@ -71,7 +83,7 @@ export function fetchMovies() {
             }
             return response.json()
         }).then((res) => {
-            dispatch(moviesFetched(res.movieArray));
+            dispatch(moviesFetched(res.moviesArray));
         }).catch((e) => console.log(e));
     }
 }
